@@ -7,7 +7,6 @@ const createCookie = async (res, authToken, next) => {
             secure : true,
             maxAge : 1000 * 60 * 60 * 24,
             sameSite : 'None',
-            domain : process.env.CURRENT_DOMAIN
         }
 
         res.cookie("authToken", authToken, options)
