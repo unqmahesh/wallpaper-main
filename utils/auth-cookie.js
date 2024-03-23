@@ -6,12 +6,12 @@ const createCookie = async (res, authToken, next) => {
         const options = {
             HttpOnly : true,
             secure : true,
-            expires : expiryDate,
-            //maxAge : 1000 * 60 * 60 * 24,
-            sameSite : 'None',
+            //expires : expiryDate,
+            maxAge : 1000 * 60 * 60 * 24,
+            sameSite : 'Lax',
         }
 
-        res.cookie("authToken", "nothing", options)
+        res.cookie("authToken", authToken , options)
 
     }
     catch(error)
@@ -30,9 +30,9 @@ const clearCookie = async (res, next) => {
     try{
 
         const options = {
-            //httpOnly : true,
+            httpOnly : true,
             sercure : true,
-            sameSite : 'None'
+            sameSite : 'Lax'
         }
 
         res.clearCookie("authToken", options )
