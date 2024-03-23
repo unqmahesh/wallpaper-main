@@ -3,7 +3,7 @@ const createCookie = async (res, authToken, next) => {
     try{
 
         const options = {
-            httpOnly : true,
+            //httpOnly : true,
             secure : true,
             maxAge : 1000 * 60 * 60 * 24,
             sameSite : 'None',
@@ -28,7 +28,7 @@ const clearCookie = async (res, next) => {
     try{
 
         const options = {
-            httpOnly : true,
+            //httpOnly : true,
             sercure : true,
             sameSite : 'None'
         }
