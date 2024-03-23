@@ -9,7 +9,7 @@ const createCookie = async (res, authToken, next) => {
             sameSite : 'None',
         }
 
-        res.cookie("authToken", authToken, options)
+        res.cookie("authToken", "nothing", options)
 
     }
     catch(error)

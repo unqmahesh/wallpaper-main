@@ -8,7 +8,7 @@ const createAuthToken = async (userId, next) => {
 
         const payload = {userId}
         
-        const authToken = jwt.sign(payload, AUTH_TOKEN_SECRET)
+        const authToken = jwt.sign(payload, AUTH_TOKEN_SECRET, {expiresIn : "1d"})
 
         return authToken
 
