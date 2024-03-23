@@ -8,7 +8,7 @@ const createCookie = async (res, authToken, next) => {
             secure : true,
             //expires : expiryDate,
             maxAge : 1000 * 60 * 60 * 24,
-            sameSite : 'Lax',
+            sameSite : 'None',
         }
 
         res.cookie("authToken", authToken , options)
@@ -31,8 +31,8 @@ const clearCookie = async (res, next) => {
 
         const options = {
             httpOnly : true,
-            sercure : true,
-            sameSite : 'Lax'
+            secure : true,
+            sameSite : 'None'
         }
 
         res.clearCookie("authToken", options )
