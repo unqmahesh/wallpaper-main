@@ -1,11 +1,13 @@
 
 const createCookie = async (res, authToken, next) => {
     try{
-
+        const expiryDate = new Date()
+        expiryDate.setDate(expiryDate.getDate() + 1)
         const options = {
             HttpOnly : true,
             secure : true,
-            maxAge : 1000 * 60 * 60 * 24,
+            expires : expiryDate,
+            //maxAge : 1000 * 60 * 60 * 24,
             sameSite : 'None',
         }
 
