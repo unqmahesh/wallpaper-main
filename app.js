@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
-import cors from 'cors'
+// import cors from 'cors'
 
 
 import errorHandler from './middleware/err-handler.js'
@@ -10,7 +10,7 @@ import indexRouter from './router/index-router.js'
 const app = express()
 
 
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173"
+// const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173"
 
 app.use(express.static("dist"))
 // app.set('trust proxy', 1)
